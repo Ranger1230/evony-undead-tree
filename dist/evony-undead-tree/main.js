@@ -244,12 +244,26 @@ __webpack_require__.r(__webpack_exports__);
 class AppComponent {
     constructor() {
         this.allMembers = [
-            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "devildog69", keepLevel: 35, keepPower: 2200000000 }),
-            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "akira", keepLevel: 35, keepPower: 1100000000 }),
-            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Ranger1230", keepLevel: 31, keepPower: 81100000 }),
-            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Sherway", keepLevel: 32, keepPower: 123000000 }),
-            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "UhohWhatNow", keepLevel: 30, keepPower: 50000000 })
-        ];
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "devildog69", keepLevel: 35, keepPower: 2300000000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "akira", keepLevel: 35, keepPower: 846000000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Ranger1230", keepLevel: 31, keepPower: 82000000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Sherway", keepLevel: 32, keepPower: 158200000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "UhohWhatNow", keepLevel: 30, keepPower: 59200000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "angel'kos", keepLevel: 26, keepPower: 20200000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Sagaelzu", keepLevel: 29, keepPower: 53000000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Venezuela", keepLevel: 28, keepPower: 54700000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "ematuka", keepLevel: 0, keepPower: 117400000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Sidea", keepLevel: 0, keepPower: 96200000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Rampaige", keepLevel: 0, keepPower: 56500000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Robo", keepLevel: 0, keepPower: 555800000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "ghosty69", keepLevel: 0, keepPower: 30400000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Chiao", keepLevel: 0, keepPower: 62300000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "Maxi_Miguel", keepLevel: 0, keepPower: 100200000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "shadow071", keepLevel: 0, keepPower: 463900000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "DOOMSDAY01", keepLevel: 0, keepPower: 128100000 }),
+            new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: "PURGEkids", keepLevel: 0, keepPower: 81900000 }),
+        ] //.sort((x, y) => x.name.toLowerCase() > y.name.toLowerCase() ? 1 : x.name.toLowerCase() === y.name.toLowerCase() ? 0 : -1);
+            .sort((y, x) => x.keepLevel > y.keepLevel ? 1 : x.keepLevel === y.keepLevel ? (x.keepPower > y.keepPower ? 1 : 0) : -1);
         console.log(this.allMembers);
         this.parentItem = new _shared_models_monarch__WEBPACK_IMPORTED_MODULE_1__["Monarch"]({ name: '' });
     }
@@ -312,7 +326,7 @@ AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineCompo
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("item", ctx.parentItem)("connectedDropListsIds", ctx.connectedDropListsIds);
-    } }, directives: [_shared_components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_3__["ListItemComponent"]], styles: [".save[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 2rem;\n  right: 2rem;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0FBQ0YiLCJmaWxlIjoiYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNhdmUge1xyXG4gIHBvc2l0aW9uOiBmaXhlZDtcclxuICBib3R0b206IDJyZW07XHJcbiAgcmlnaHQ6IDJyZW07XHJcbn1cclxuIl19 */"] });
+    } }, directives: [_shared_components_list_item_list_item_component__WEBPACK_IMPORTED_MODULE_3__["ListItemComponent"]], styles: [".save[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 2rem;\n  right: 2rem;\n}\n\ndiv[_ngcontent-%COMP%] {\n  padding-left: 40px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uXFwuLlxcYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0FBQ0Y7O0FBRUE7RUFDRSxrQkFBQTtBQUNGIiwiZmlsZSI6ImFwcC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zYXZlIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgYm90dG9tOiAycmVtO1xyXG4gIHJpZ2h0OiAycmVtO1xyXG59XHJcblxyXG5kaXYge1xyXG4gIHBhZGRpbmctbGVmdDogNDBweDtcclxufSJdfQ== */"] });
 
 
 /***/ }),
