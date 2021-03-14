@@ -5,9 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
-import { BoardComponent } from './board/board.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -15,12 +13,11 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from "@angular/material/icon";
 import { ListItemComponent } from './shared/components/list-item/list-item.component';
+import { TreeModule } from './tree/tree.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
-    BoardComponent,
     ListItemComponent
   ],
   imports: [
@@ -34,7 +31,8 @@ import { ListItemComponent } from './shared/components/list-item/list-item.compo
     MatInputModule,
     MatTreeModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    TreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

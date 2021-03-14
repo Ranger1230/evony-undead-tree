@@ -1,0 +1,24 @@
+
+<div *ngIf="monarch.name">
+  <span  (click)="_leafSelected(monarch)"
+          class="node">{{monarch.name}}, K{{monarch.keepLevel}}, {{powerDisplay(monarch.keepPower)}}</span>
+</div>
+<ul [class.root]="!monarch.name">
+  <li *ngFor="let reinforcing of monarch.reinforcing" >
+    <app-tree (onLeafSelected)="_leafSelected($event)" (onLeafChanged)="_leafChanged($event)" [monarch]="reinforcing"></app-tree>
+  </li>
+  <li [class.leaf]="monarch.reinforcing.length === 0">
+    <i (click)="addReinforcing()"
+        class="material-icons add-icon">
+        add_circle_outline
+    </i>
+    <div *ngIf="addingReinforcing" class="add-reinforcing">
+      <i class="material-icons cancel" (click)="cancelAddReinforcing()">cancel</i>
+      <button *ngFor="let member of allMembers" (click)="addReinforced(member)" [class.already-reinforced]="isAlreadyReinforcing(member)" [disabled]="isAlreadyReinforcing(member)">
+        {{member.name}}, K{{member.keepLevel}}, {{powerDisplay(member.keepPower)}}
+        <i *ngIf="member.reinforcedBy" class="material-icons">shield</i>
+        <i *ngIf="member.reinforcing.length > 0" class="material-icons">assistant_direction</i>
+      </button>
+    </div>
+  </li>
+</ul>

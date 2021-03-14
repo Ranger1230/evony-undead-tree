@@ -1,7 +1,21 @@
-<div>
+<!-- <div>
   <list-item [item]="parentItem"
     [connectedDropListsIds]="connectedDropListsIds"
     (itemDrop)="onDragDrop($event)">
   </list-item>
   <button (click)="save()" class="save">Save</button>
+</div> -->
+
+<div>
+
 </div>
+
+<div class="tree">
+  <ul>
+    <li>
+      <app-tree (onLeafChanged)="treeChanged()" [monarch]="parentItem"></app-tree>
+    </li>
+  </ul>
+</div>
+
+<button class="save" (click)="save()">Save</button>

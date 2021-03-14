@@ -1,0 +1,32 @@
+.add-reinforcing {
+    position: absolute;
+    z-index: 1;
+    overflow: auto;
+    max-height: 100vh;
+    top: 0;
+    background-color: #FFF;
+
+    button {
+        display: block;
+        margin-bottom: 1em;
+        min-height: 45px;
+        cursor: pointer;
+        padding: 0 1em;
+
+        &.already-reinforced {
+            cursor: default;
+        }
+    }
+}
+.leaf {
+    .add-icon {
+        padding-top: 0;
+    }
+}
+.add-icon {
+    padding-top: 10px;
+}
+
+i.cancel {
+    cursor: pointer;
+}
