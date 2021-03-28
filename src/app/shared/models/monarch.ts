@@ -3,7 +3,7 @@ import * as uuid from 'uuid';
 export class Monarch {
     private _reinforcedBy: Monarch;
 
-    name: string;
+    id: string;
     keepLevel: number;
     keepPower: number;
     uId: string;
@@ -30,15 +30,23 @@ export class Monarch {
     }
 
     constructor(options: {
-        name: string,
+        id: string,
         keepLevel?: number,
         keepPower?: number,
         children?: Monarch[]
     }) {
-        this.name = options.name;
+        this.id = options.id;
         this.keepLevel = options.keepLevel ?? 0;
         this.keepPower = options.keepPower ?? 0;
         this.uId = uuid.v4();
         this.reinforcing = options.children || [];
     }
+}
+
+export class SavedMonarch {
+    id: string;
+    keepLevel: number;
+    keepPower: number;
+    uId: string;
+    reinforcing: string;
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MonarchsService } from 'src/app/services/monarchs.service';
 import { Monarch } from 'src/app/shared/models/monarch';
 
@@ -9,11 +10,11 @@ import { Monarch } from 'src/app/shared/models/monarch';
 })
 export class TreeComponent implements OnInit {
   @Input() monarch: Monarch;
+  @Input() allMembers: Observable<Monarch[]>;
   @Output() onLeafSelected: EventEmitter<Monarch> = new EventEmitter();
   @Output() onLeafChanged: EventEmitter<Monarch> = new EventEmitter();
 
   addingReinforcing = false;
-  allMembers: Monarch[] = [];
 
   constructor(private monarchsService: MonarchsService) { }
 
@@ -44,7 +45,6 @@ export class TreeComponent implements OnInit {
 
   addReinforcing() {
     this.addingReinforcing = true;
-    this.allMembers = this.monarchsService.getAllMonarchs();
   }
 
   isAlreadyReinforcing(member: Monarch) {

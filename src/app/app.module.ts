@@ -12,13 +12,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from "@angular/material/icon";
-import { ListItemComponent } from './shared/components/list-item/list-item.component';
 import { TreeModule } from './tree/tree.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ListItemComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +31,8 @@ import { TreeModule } from './tree/tree.module';
     MatTreeModule,
     MatCheckboxModule,
     MatIconModule,
-    TreeModule
+    TreeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

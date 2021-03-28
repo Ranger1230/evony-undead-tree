@@ -2,6 +2,8 @@ import { CdkDragDrop, CdkDragEnter, CdkDragExit, moveItemInArray } from '@angula
 import { Component, OnInit } from '@angular/core';
 import { MonarchsService } from './services/monarchs.service';
 import { Monarch } from './shared/models/monarch';
+import { CosmosClient } from "@azure/cosmos";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,22 +16,24 @@ export class AppComponent implements OnInit {
     // We reverse ids here to respect items nesting hierarchy
     return this.getIdsRecursive(this.parentItem).reverse();
   }
-  allMembers: Monarch[];
+  allMembers: Observable<Monarch[]>;
 
   constructor(private monarchsService: MonarchsService) {
     console.log(this.allMembers);
     this.allMembers = monarchsService.getAllMonarchs();
-    this.parentItem = new Monarch({ name: '' });
-    // this.parentItem = this.allMembers[0];
-    // this.parentItem.addReinforcing(this.allMembers[1]);
-    // this.parentItem.addReinforcing(this.allMembers[2]);
+    this.parentItem = new Monarch({ id: '' });
+    this.allMembers.subscribe(members => {
+      this.parentItem.reinforcing = members.filter(x => x.id === "devildog69" || x.id === "akira");
+    });
   }
 
   public ngOnInit() {
-    if(window.localStorage.undeadTree) {
-      this.parentItem = JSON.parse(window.localStorage.undeadTree);
-      return;
-    }
+    //let client = new CosmosClient(`mongodb://evony-undead-tree:Zenmnj18dIAER0DWYcbtEJYJRwA4ZESh81eP0vuNaontfUTVZ45233aL85MLk9w0yclbtRBramiEh0cpiMu7zw==@evony-undead-tree.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@evony-undead-tree@`);
+
+    // if(window.localStorage.undeadTree) {
+    //   this.parentItem = JSON.parse(window.localStorage.undeadTree);
+    //   return;
+    // }
     //this.allMembers.forEach(member => this.parentItem.reinforcing.push(member));
   }
 
@@ -53,6 +57,12 @@ export class AppComponent implements OnInit {
   save(): void {
     const keys = Object.keys(this.parentItem).filter(x => x !== "reinforcedBy");
     window.localStorage.setItem("undeadTree", JSON.stringify(this.parentItem, keys));
+
+    this.allMembers.subscribe(allMembers => {
+      this.monarchsService.saveAllMonarchs(allMembers).subscribe(() => {}, error => {
+        console.error(error);
+      });
+    });
   }
 
   treeChanged() {
